@@ -1,2 +1,2 @@
 # team-gen
-I got the questions and everything working but i couldnt figure out how to make the user input display to my index.html
+if you take out the createfile function that i was using to try to display the data of the questions, the questions and everything work but i couldnt figure out how to make the user input display to my index.html. I tried to do something with jquery then realized you cant do that then i tried jsdom but i couldnt figure it out.
