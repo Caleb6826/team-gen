@@ -21,6 +21,7 @@
   "homepage": "https://github.com/Caleb6826/team-gen#readme",
   "dependencies": {
     "jest": "^28.1.0",
-    "jquery": "^3.6.0"
+    "jquery": "^3.6.0",
+    "jsdom": "^19.0.0"
   }
 }

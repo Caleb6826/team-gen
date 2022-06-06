@@ -1,5 +1,7 @@
 const inquirer = require("inquirer");
 const employee = require("../lib/employee.js");
+const jsdom = require("jsdom");
+const { JSDOM } = jsdom;
 const teamMembers = [];
 
 function start() {
@@ -37,6 +39,7 @@ function start() {
           data.email,
           data.officeNumber
         );
+        createfile(manager);
         teamMembers.push(manager);
         addTeamMember();
       });
@@ -58,7 +61,7 @@ function start() {
         } else if (val.title === "Intern") {
           addintern();
         } else {
-            
+            console.log("all done!")
         }
       });
   }
@@ -88,7 +91,13 @@ function start() {
         },
       ])
       .then((data) => {
-        const engineer = new employee(data.name, data.id, data.email, data.github);
+        const engineer = new employee(
+            data.name, 
+            data.id, 
+            data.email, 
+            data.github
+            );
+            createfile(employee);
         teamMembers.push(engineer);
         addTeamMember();
       });
@@ -119,17 +128,20 @@ function start() {
         },
       ])
       .then((data) => {
-        const intern = new employee(data.name, data.id, data.email, data.school);
+        const intern = new employee(
+            data.name,
+            data.id, 
+            data.email, 
+            data.school
+            );
         teamMembers.push(intern);
+        createfile(intern);
         addTeamMember();
       });
   }
 
   function createfile(employee){
-     
-   var cardtitle = $('<h1>')
-         .text(employee.name)
-    $('body').append(cardtitle);
+    document.getElementsById("employee").innerHTML += "<h1>" + employee.name +"</h1>";
   };
 
 
